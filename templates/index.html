@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SadTalker App</title>
+</head>
+<body>
+    <h1>Choose the image name to animate:</h1>
+    <form action="{{ url_for('process') }}" method="post" enctype="multipart/form-data">
+        <select name="image_name">
+            {% for img_name in img_list %}
+                <option value="{{ img_name }}">{{ img_name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="file" name="audio">
+        <br>
+        <input type="submit" value="Generate Animation">
+    </form>
+</body>
+</html>

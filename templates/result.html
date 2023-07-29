@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SadTalker Result</title>
+</head>
+<body>
+    {% if mp4_name %}
+        <h2>Display animation:</h2>
+        <video width="256" controls>
+            <source src="{{ url_for('static', filename='results/' ~ mp4_name) }}" type="video/mp4">
+        </video>
+    {% else %}
+        <h2>No animation generated!</h2>
+    {% endif %}
+</body>
+</html>
